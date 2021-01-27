@@ -7,7 +7,7 @@ const TimerShower = () => {
   const [ time, setTime ] = useState(global.timer.toString())
   const [ interv, setInterv] = useState(setInterval(()=>{
     setTime(global.timer.toString())
-  },10))
+  },100))
   return (
     <div className="timer-shower">
       {time}
