@@ -18,7 +18,6 @@ const Card = ({ pokemon, status, position, vertical }) => {
   useEffect(()=>{
     const updateCard = () => {
       setCardStyle( prevState => {
-        console.log('status:',status,'reversed',reversed)
         return({
           ...prevState,
           cursor: `${reversed === 'solved'? 'not-allowed':'pointer'}`,

@@ -30,7 +30,7 @@ const Board = () => {
     handleResize()
     recalculateCardSize()
     return () => window.removeEventListener( 'resize', handleResize)
-  } , [global.data]  )
+  } , [global.data, global.rows, global.columns]  )
 
   useEffect( () => {
     setBoardStyle( prevState => {

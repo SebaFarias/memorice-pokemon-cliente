@@ -9,9 +9,9 @@ const FLIP_TIME = 300 //this is only half the turn
 
 export const GlobalStateProvider = (props) => {
   const [ global, setGlobal] = useState({
-    data: new PokeMatrix( 5 , 6 ),
-    rows: 5,
-    columns: 6,
+    data: new PokeMatrix( 3 , 4 ),
+    rows: 3,
+    columns: 4,
     blocked: false,
     started: false,
     menu:-1,
@@ -106,7 +106,8 @@ export const GlobalStateProvider = (props) => {
     },
     startGame: () => {
       setGlobal( prevState => {
-        prevState.timer.startNewGame()
+        prevState.timer.stop()
+        prevState.timer.reset()
         return({
           ...prevState,
           data: new PokeMatrix( prevState.rows , prevState.columns ),
@@ -136,6 +137,7 @@ export const GlobalStateProvider = (props) => {
     },
     clickedCard: ( indexes, flip ) => {
       const prevState = controller.getGlobal()
+      if(!prevState.timer.running)prevState.timer.start()
       if(indexes===prevState.clicked[0]) return
       const isSecond = prevState.clicked.length > 0
       let lastOne
