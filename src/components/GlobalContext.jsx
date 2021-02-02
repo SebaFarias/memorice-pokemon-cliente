@@ -34,7 +34,7 @@ export const GlobalStateProvider = (props) => {
     },
     hideMenu: () => {
       setGlobal( prevState => {
-        prevState.timer.start()
+        if(prevState.timer.toMiliseconds() !== 0 )prevState.timer.start()
         return ({
           ...prevState,
           showMenu: false,
