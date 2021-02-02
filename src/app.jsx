@@ -11,7 +11,7 @@ const App = () => {
     <GlobalStateProvider>
       <MenuModal/>
       <Header/>
-      <Board/>
+      <Board />
       <Footer/>
     </GlobalStateProvider>
   )
