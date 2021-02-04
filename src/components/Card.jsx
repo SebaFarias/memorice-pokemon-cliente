@@ -53,14 +53,14 @@ const Card = ({ pokemon, status, position, vertical }) => {
   
   return (
     <section 
-      className='card' 
+      className={`card ${reversed === 'hidden'? 'hidden' : ''}`}
       style={cardStyle}
       onClick={handleClick}
       id={`card${position[0]}-${position[1]}`}  
     >
       <img 
-        className='pokemon-img'
-        src={ reversed === 'hidden'? pokeballImg : imgController.getImg(pokemon) }
+        className={`pokemon-img ${reversed === 'hidden'? 'hidden' : ''}`}
+        src={ imgController.getImg(pokemon) }
         style={{
           width:  `${ vertical ? '100%': 'auto' }`,
           height: `${ vertical ? 'auto': '100%' }`,

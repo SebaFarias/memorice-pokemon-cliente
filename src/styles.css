@@ -1,8 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
 :root{
-  --gradient:linear-gradient(116.82deg, #2571F8 0%, #68E2F8 100%);
+  --gradient: linear-gradient(116.82deg, #2571F8 0%, #68E2F8 100%);
   --bar-radius: 1.5rem;
+  --bar-gradient: linear-gradient(
+    180deg,
+    #1F212D 5%,
+    #3E425B 25%,
+    #232633 60%,
+    #0A0B0F 100%);
+  border-radius: 0px 0px 24px 24px;
   --yellow: #F4CB08;
   --blue: #1D379C;
 }
@@ -49,10 +56,23 @@ body{
   border: 5px solid var(--blue);
   overflow: hidden;
 }
+.card.hidden::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url('../src/images/icon.svg') center no-repeat;
+
+}
 .pokemon-img{
   margin: auto;
 }
-.hidden{
+.pokemon-img.hidden{
+  opacity: 0;
+}
+.modal-outside.hidden{
   opacity: 0;
   pointer-events: none;
 }
@@ -183,7 +203,7 @@ h4{
   font-weight: bold;
   text-align: center;
   color: white;
-  background: linear-gradient(0deg,#1F212D 0%,#2a2d3c 50%,#1F212D 100%);
+  background: var(--bar-gradient);
 }
 .round-btn{
   width: 3rem;
