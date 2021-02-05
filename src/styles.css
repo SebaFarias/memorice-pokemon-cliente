@@ -69,11 +69,13 @@ body{
 .pokemon-img{
   margin: auto;
 }
-.pokemon-img.hidden{
+.hidden{
   opacity: 0;
 }
+.card.hidden{
+  opacity: 1;
+}
 .modal-outside.hidden{
-  opacity: 0;
   pointer-events: none;
 }
 .modal-outside{
